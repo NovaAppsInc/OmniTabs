@@ -391,7 +391,7 @@ export const Search = ({tab}: SearchProps) => {
                 tabs && tabs.length > 0 && tab && tab.active !== true ? "absolute translate-y-8 opacity-0 pointer-events-none" : ""
             }
             ${
-                focused === true ? "bg-white/10 accent-inset-2-18" : "bg-white/10 accent-inset-2-8"
+                focused === true ? "bg-(--accent)/15 accent-inset-2-18" : "bg-(--accent)/10 accent-inset-2-8"
             }
         `}>
             <span className={"absolute left-1/2 -translate-x-1/2 font-semibold ease-in-out pointer-events-none w-max" + " " + `

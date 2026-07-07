@@ -178,7 +178,7 @@ function App() {
                 ))
               }
             </div>
-            <button className={"group flex items-center justify-center p-2 rounded-lg text-white/40 hover:text-white accent-inset-1_5-18 hover:bg-white/10 hover:accent-inset-1_5-0 cursor-pointer duration-150" + " " +  
+            <button className={"group flex items-center justify-center p-2 rounded-lg text-white/40 hover:text-white accent-inset-1_5-18 hover:bg-(--accent)/20 hover:accent-inset-1_5-0 cursor-pointer duration-150" + " " +  
               (tabPosition === "left" || tabPosition === "right" ? "w-full" : "h-max")
             } onMouseDown={() => {
               addTab({
@@ -186,7 +186,7 @@ function App() {
                 url: `${INTERNAL_PROTOCOL}newtab`,
               })
             }}>
-              <PlusIcon className={"stroke-2 stroke-current group-hover:scale-110" + " " + `
+              <PlusIcon className={"stroke-2 stroke-current group-hover:scale-110 pointer-events-none" + " " + `
                 ${tabPosition === "left" || tabPosition === "right" ? "size-5" : "size-4"}
               `} />
             </button>

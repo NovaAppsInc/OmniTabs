@@ -279,7 +279,7 @@ export const TopBar = () => {
 
     return (
         <div className={"flex gap-2 items-center justify-between"}>
-            <div className="flex gap-2 h-max p-2.5 bg-white/10 accent-inset-1_5-10 rounded-xl">
+            <div className="flex gap-2 h-max p-2.5 bg-(--accent)/10 accent-inset-1_5-10 rounded-xl">
                 <button className={"group flex items-center justify-center duration-150" + " " + (canGoBack ? "opacity-80 hover:opacity-100 cursor-pointer" : "opacity-40 cursor-not-allowed")}
                 onClick={() => {
                     if (activeTab && canGoBack) {
@@ -312,7 +312,7 @@ export const TopBar = () => {
             </div>
 
             <div className="flex gap-2 items-center">
-                <div ref={securityMenuRef} className="relative flex gap-2 h-max p-2.5 bg-white/10 accent-inset-1_5-10 rounded-xl">
+                <div ref={securityMenuRef} className="relative flex gap-2 h-max p-2.5 bg-(--accent)/10 accent-inset-1_5-10 rounded-xl">
                     {
                     tabPosition === "top" || tabPosition === "bottom" ?
                         <button className="group flex items-center justify-center opacity-80 hover:opacity-100 cursor-not-allowed duration-150">
@@ -331,10 +331,10 @@ export const TopBar = () => {
                         widthClass="w-84"
                         customContent={
                             <>
-                                <div className="p-4 border-b border-white/10 bg-white/3">
+                                <div className="p-4 border-b border-(--accent)/10 bg-(--accent)/3">
                                     <div className="flex items-start justify-between gap-3">
                                         <div className="flex items-center gap-2.5">
-                                            <div className="rounded-full p-2 bg-white/10 accent-inset-1-15">
+                                            <div className="rounded-full p-2 bg-(--accent)/10 accent-inset-1-15">
                                                 <SecurityIcon className="size-4.5" />
                                             </div>
                                             <div>
@@ -358,7 +358,7 @@ export const TopBar = () => {
                                         </button>
                                     </div>
 
-                                    <div className="rounded-lg bg-white/5 border border-white/10 p-2.5">
+                                    <div className="rounded-lg bg-(--accent)/5 border border-(--accent)/10 p-2.5">
                                         <p className="text-xs opacity-70">Data</p>
                                         <p className="text-sm">Cookies and site data may be stored by this page.</p>
                                     </div>
@@ -371,7 +371,7 @@ export const TopBar = () => {
                     </button>
                 </div>
                 <Search tab={activeTab} />
-                <div className="flex gap-2 h-max p-2.5 bg-white/10 accent-inset-1_5-10 rounded-xl">
+                <div className="flex gap-2 h-max p-2.5 bg-(--accent)/10 accent-inset-1_5-10 rounded-xl">
                     <button
                         className={"group flex items-center justify-center duration-150 " + (canBookmark ? "cursor-pointer" : "cursor-not-allowed") + " " + (isBookmarked ? "text-amber-300 opacity-100" : "opacity-80 hover:opacity-100")}
                         onClick={handleBookmark}
@@ -398,7 +398,7 @@ export const TopBar = () => {
                 </div>
             </div>
 
-            <div ref={browserMenuRef} className="relative flex p-2 gap-2 bg-white/10 accent-inset-1_5-10 rounded-xl">
+            <div ref={browserMenuRef} className="relative flex p-2 gap-2 bg-(--accent)/10 accent-inset-1_5-10 rounded-xl">
                 <button className="group flex items-center justify-center opacity-80 hover:opacity-100 cursor-pointer duration-150" onMouseDown={() => {
                     tabsOpen === true ? setTabState(false) : setTabState(true)
                 }}>

@@ -39,7 +39,7 @@ export const ContextDialog = ({
     if (!open) return null;
 
     return (
-        <div className={`absolute top-[calc(100%+0.6rem)] right-0 rounded-xl border border-white/15 bg-zinc-950/92 backdrop-blur-md shadow-2xl z-40 overflow-hidden ${widthClass}`}>
+        <div className={`absolute top-[calc(100%+0.3rem)] right-0 rounded-xl border border-white/15 bg-zinc-950/60 backdrop-blur-md shadow-2xl z-40 overflow-hidden ${widthClass}`}>
             {(title || subtitle) && (
                 <div className="p-4 border-b border-white/10 bg-white/3">
                     {title && <p className="text-sm font-semibold leading-none">{title}</p>}
