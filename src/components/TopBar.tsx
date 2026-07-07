@@ -42,7 +42,7 @@ const getHostFromUrl = (url?: string) => {
     } catch {
         return "Unknown site";
     }
-};
+}; 
 
 export const TopBar = () => {
     const { tabs, tabsOpen, setTabState, addTab, setDialogOpen, navigateBack, navigateForward, updateTab } = useTabStore()
@@ -286,7 +286,7 @@ export const TopBar = () => {
                         navigateBack(activeTab.id);
                     }
                 }}>
-                    <ArrowLeftIcon className={"size-5 stroke-2 stroke-current duration-150" + " " + (canGoBack ? "group-hover:scale-85" : "")} />
+                    <ArrowLeftIcon className={"size-5 stroke-2 stroke-current duration-150" + " " + (canGoBack ? "group-hover:scale-80" : "")} />
                 </button>
                 <button className={"group flex items-center justify-center duration-150 " + (canGoForward ? "opacity-80 hover:opacity-100 cursor-pointer" : "opacity-40 cursor-not-allowed")}
                 onClick={() => {
@@ -294,7 +294,7 @@ export const TopBar = () => {
                         navigateForward(activeTab.id);
                     }
                 }}>
-                    <ArrowRightIcon className={"size-5 stroke-2 stroke-current duration-150" + " " + (canGoForward ? "group-hover:scale-85" : "")} />
+                    <ArrowRightIcon className={"size-5 stroke-2 stroke-current duration-150" + " " + (canGoForward ? "group-hover:scale-80" : "")} />
                 </button>
                 <button className={"group flex items-center justify-center duration-150 " + (canRefresh ? "opacity-80 hover:opacity-100 cursor-pointer" : "opacity-40 cursor-not-allowed")}
                 onClick={() => {
@@ -303,11 +303,11 @@ export const TopBar = () => {
                         refreshKey: (activeTab.refreshKey ?? 0) + 1,
                     });
                 }}>
-                    <ArrowPathIcon className="size-5 stroke-1 stroke-current group-hover:scale-85 group-hover:rotate-45 duration-150" />
+                    <ArrowPathIcon className="size-5 stroke-1 stroke-current group-hover:scale-80 group-hover:rotate-45 duration-150" />
                 </button>
                 <button className="group flex items-center justify-center opacity-80 hover:opacity-100 cursor-pointer duration-150"
                 onClick={handleHome}>
-                    <HomeIcon className="size-5 group-hover:scale-85 duration-150" />
+                    <HomeIcon className="size-5 group-hover:scale-80 duration-150" />
                 </button>
             </div>
 
@@ -316,7 +316,7 @@ export const TopBar = () => {
                     {
                     tabPosition === "top" || tabPosition === "bottom" ?
                         <button className="group flex items-center justify-center opacity-80 hover:opacity-100 cursor-not-allowed duration-150">
-                            <UserCircleIcon className="size-5 group-hover:scale-85 duration-150" />
+                            <UserCircleIcon className="size-5 group-hover:scale-80 duration-150" />
                         </button>
                     : null
                     }
@@ -324,14 +324,14 @@ export const TopBar = () => {
                         className="group flex items-center justify-center opacity-80 hover:opacity-100 cursor-pointer duration-150"
                         onClick={() => setOpenMenu(openMenu === "security" ? "none" : "security")}
                     >
-                        <SecurityIcon className="size-5 group-hover:scale-85 duration-150" />
+                        <SecurityIcon className="size-5 group-hover:scale-80 duration-150" />
                     </button>
                     <ContextDialog
                         open={openMenu === "security"}
                         widthClass="w-84"
                         customContent={
                             <>
-                                <div className="p-4 border-b border-(--accent)/10 bg-(--accent)/3">
+                                <div className="p-4 border-b border-(--accent)/15 bg-(--accent)/10">
                                     <div className="flex items-start justify-between gap-3">
                                         <div className="flex items-center gap-2.5">
                                             <div className="rounded-full p-2 bg-(--accent)/10 accent-inset-1-15">
@@ -348,7 +348,7 @@ export const TopBar = () => {
                                 </div>
 
                                 <div className="p-3 space-y-2">
-                                    <div className="flex items-center justify-between p-2.5 bg-white/5 border border-white/10 rounded-lg">
+                                    <div className="flex items-center justify-between p-2.5 bg-(--accent)/8 border border-(--accent)/10 rounded-lg">
                                         <div className="flex flex-col">
                                             <p className="text-xs opacity-70">Site</p>
                                             <p className="text-sm truncate">{activeTab?.url ? siteHost : "No active URL"}</p>
@@ -358,7 +358,7 @@ export const TopBar = () => {
                                         </button>
                                     </div>
 
-                                    <div className="rounded-lg bg-(--accent)/5 border border-(--accent)/10 p-2.5">
+                                    <div className="rounded-lg bg-(--accent)/8 border border-(--accent)/10 p-2.5">
                                         <p className="text-xs opacity-70">Data</p>
                                         <p className="text-sm">Cookies and site data may be stored by this page.</p>
                                     </div>
@@ -367,7 +367,7 @@ export const TopBar = () => {
                         }
                     />
                     <button className="group flex items-center justify-center opacity-80 hover:opacity-100 cursor-not-allowed duration-150">
-                        <AdjustmentsHorizontalIcon className="size-5 group-hover:scale-85 duration-150" />
+                        <AdjustmentsHorizontalIcon className="size-5 group-hover:scale-80 duration-150" />
                     </button>
                 </div>
                 <Search tab={activeTab} />
@@ -378,7 +378,7 @@ export const TopBar = () => {
                         disabled={!canBookmark}
                         title={isBookmarked ? "Remove bookmark" : "Add bookmark"}
                     >
-                        <StarIcon className="size-5 stroke-1 stroke-current group-hover:scale-85 duration-150" />
+                        <StarIcon className="size-5 stroke-1 stroke-current group-hover:scale-80 duration-150" />
                     </button>
                     <button
                         className={"group flex items-center justify-center duration-150 " + (
@@ -390,10 +390,10 @@ export const TopBar = () => {
                         disabled={!isVoiceSupported}
                         title={isVoiceSupported ? (isListening ? "Stop voice search" : "Start voice search") : "Voice search is not supported in this browser"}
                     >
-                        <MicrophoneIcon className="size-5 stroke-1 stroke-current group-hover:scale-85 duration-150" />
+                        <MicrophoneIcon className="size-5 stroke-1 stroke-current group-hover:scale-80 duration-150" />
                     </button>
                     <button className="group flex items-center justify-center opacity-80 hover:opacity-100 cursor-pointer duration-150">
-                        <MagnifyingGlassIcon className="size-5 stroke-1 stroke-current group-hover:scale-85 duration-150" />
+                        <MagnifyingGlassIcon className="size-5 stroke-1 stroke-current group-hover:scale-80 duration-150" />
                     </button>
                 </div>
             </div>
@@ -404,21 +404,21 @@ export const TopBar = () => {
                 }}>
                     {
                     tabsOpen === true ?
-                        tabPosition === "left" ? <PanelLeftClose className="size-5.5 group-hover:scale-85 duration-150" /> : 
-                        tabPosition === "right" ? <PanelRightClose className="size-5.5 group-hover:scale-85 duration-150" /> : 
-                        tabPosition === "top" ? <PanelTopClose className="size-5.5 group-hover:scale-85 duration-150" /> :
-                        tabPosition === "bottom" ? <PanelBottomClose className="size-5.5 group-hover:scale-85 duration-150" /> : 
-                            <RectangleStackOutline className="size-5.5 group-hover:scale-85 duration-150" /> :
-                        tabPosition === "left" ? <PanelLeftOpen className="size-5.5 group-hover:scale-85 duration-150" /> : 
-                        tabPosition === "right" ? <PanelRightOpen className="size-5.5 group-hover:scale-85 duration-150" /> : 
-                        tabPosition === "top" ? <PanelTopOpen className="size-5.5 group-hover:scale-85 duration-150" /> :
-                        tabPosition === "bottom" ? <PanelBottomOpen className="size-5.5 group-hover:scale-85 duration-150" /> : 
-                            <RectangleStackOutline className="size-5.5 group-hover:scale-85 duration-150" />
+                        tabPosition === "left" ? <PanelLeftClose className="size-5.5 group-hover:scale-80 duration-150" /> : 
+                        tabPosition === "right" ? <PanelRightClose className="size-5.5 group-hover:scale-80 duration-150" /> : 
+                        tabPosition === "top" ? <PanelTopClose className="size-5.5 group-hover:scale-80 duration-150" /> :
+                        tabPosition === "bottom" ? <PanelBottomClose className="size-5.5 group-hover:scale-80 duration-150" /> : 
+                            <RectangleStackOutline className="size-5.5 group-hover:scale-80 duration-150" /> :
+                        tabPosition === "left" ? <PanelLeftOpen className="size-5.5 group-hover:scale-80 duration-150" /> : 
+                        tabPosition === "right" ? <PanelRightOpen className="size-5.5 group-hover:scale-80 duration-150" /> : 
+                        tabPosition === "top" ? <PanelTopOpen className="size-5.5 group-hover:scale-80 duration-150" /> :
+                        tabPosition === "bottom" ? <PanelBottomOpen className="size-5.5 group-hover:scale-80 duration-150" /> : 
+                            <RectangleStackOutline className="size-5.5 group-hover:scale-80 duration-150" />
                     }
                 </button>
                 <button className="group flex items-center justify-center opacity-80 hover:opacity-100 cursor-pointer duration-150"
                 onClick={() => setOpenMenu(openMenu === "browser" ? "none" : "browser")}>
-                    <EllipsisHorizontalIcon className="size-5.5 stroke-1 stroke-current group-hover:scale-85 duration-150" />
+                    <EllipsisHorizontalIcon className="size-5.5 stroke-1 stroke-current group-hover:scale-80 duration-150" />
                 </button>
                 <ContextDialog open={openMenu === "browser"} options={browserOptions} />
             </div>

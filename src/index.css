@@ -27,15 +27,15 @@ body, html {
 }
 
 .accent-inset-1_5-10 {
-  box-shadow: inset 0 0 0 1.5px rgb(var(--accent-rgb) / calc(0.1 * var(--accent-alpha-multiplier)));
+  box-shadow: inset 0 0 0 1px rgb(var(--accent-rgb) / calc(0.1 * var(--accent-alpha-multiplier)));
 }
 
 .accent-inset-1_5-12 {
-  box-shadow: inset 0 0 0 1.5px rgb(var(--accent-rgb) / calc(0.12 * var(--accent-alpha-multiplier)));
+  box-shadow: inset 0 0 0 1px rgb(var(--accent-rgb) / calc(0.12 * var(--accent-alpha-multiplier)));
 }
 
 .accent-inset-1_5-18 {
-  box-shadow: inset 0 0 0 1.5px rgb(var(--accent-rgb) / calc(0.18 * var(--accent-alpha-multiplier)));
+  box-shadow: inset 0 0 0 1px rgb(var(--accent-rgb) / calc(0.18 * var(--accent-alpha-multiplier)));
 }
 
 .accent-inset-2-8 {
@@ -56,4 +56,43 @@ body, html {
 
 .accent-inset-2-28 {
   box-shadow: inset 0 0 0 2px rgb(var(--accent-rgb) / calc(0.28 * var(--accent-alpha-multiplier)));
+}
+
+@keyframes context-dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes context-dialog-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
+  }
+}
+
+.animate-context-dialog-in {
+  animation: context-dialog-in 140ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.animate-context-dialog-out {
+  animation: context-dialog-out 140ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-context-dialog-in,
+  .animate-context-dialog-out {
+    animation: none;
+  }
 }

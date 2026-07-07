@@ -144,19 +144,11 @@ function App() {
             <div className={"flex gap-2 h-min" + " " + (tabPosition === 'top' || tabPosition === 'bottom' ? 'flex-row overflow-x-auto' : 'flex-col w-65 overflow-y-auto')}>
               {
                 tabs.map((tab) => (
-                  <div
-                  draggable
-                  onDragStart={(event) => handleDragStart(event, tab.id)}
-                  onDragOver={(event) => handleDragOver(event, tab.id)}
-                  onDrop={(event) => handleDrop(event, tab.id)}
-                  onDragEnd={clearDragState}
-                  className={"relative flex gap-8 p-2 h-min items-center leading-none rounded-lg duration-150" + " " + (tabPosition === 'left' || tabPosition === 'right' ? 'justify-between' : 'justify-center') + " " +
-                    (tab.active === true ? "accent-bg-10 hover:accent-bg-15 inset-shadow-transparent" : "accent-inset-1_5-12 hover:inset-shadow-transparent bg-white/0 hover:bg-white/8") + " " +
-                    (draggedTabId === tab.id ? "opacity-60" : "")}
-                    key={tab.id}
-                  onClick={() => {
+                  <div className={"relative flex gap-8 p-2 h-min items-center leading-none rounded-lg duration-150" + " " + (tabPosition === 'left' || tabPosition === 'right' ? 'justify-between' : 'justify-center') + " " +
+                    (tab.active === true ? "accent-bg-10 hover:accent-bg-15 inset-shadow-transparent" : "accent-inset-1_5-12 hover:inset-shadow-transparent bg-white/0 hover:bg-(--accent)/8") + " " +
+                  (draggedTabId === tab.id ? "opacity-60" : "")} key={tab.id} onClick={() => {
                     setActive(tab.id)
-                  }}>
+                  }} draggable onDragStart={(event) => handleDragStart(event, tab.id)} onDragOver={(event) => handleDragOver(event, tab.id)} onDrop={(event) => handleDrop(event, tab.id)} onDragEnd={clearDragState}>
                     {dropTarget?.id === tab.id && draggedTabId !== tab.id && (
                       <div
                         className={
